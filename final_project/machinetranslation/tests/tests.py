@@ -1,16 +1,12 @@
 import unittest
+from  translator import EnglishToFrench,FrenchToEnglish
 
-from translator import english_to_french
-from translator import french_to_english
-
-class TestString(unittest.TestCase): 
+class TestEnglish(unittest.TestCase): 
     def test1(self): 
-        self.assertEqual(english_to_french("Hello"),"Bonjour") 
-    def test2(self): 
-        self.assertEqual(french_to_english("Bonjour"),"Hello") 
-    def test3(self): 
-        self.assertNotEqual(french_to_eglish("null"),"Hello") 
-    def test4(self): 
-        self.assertNotEqual(english_to_french("null"),"Bonjour")  
+        self.assertEqual(EnglishToFrench(''),'') # test when '' is given as input the output is ''.
+        self.assertEqual(EnglishToFrench('Hello'), 'Bonjour')  # test when 'Hello' is given as input the output is 'Bonjour'.
 
-unittest.main()
+class TestFrench(unittest.TestCase): 
+    def test1(self): 
+        self.assertEqual(FrenchToEnglish(''),'') # test when '' is given as input the output is ''.
+        self.assertEqual(FrenchToEnglish('Bonjour'), 'Hello') # test when 'Bonjour' is given as input the output is 'Hello'.

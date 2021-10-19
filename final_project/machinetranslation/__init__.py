@@ -1,4 +1,0 @@
-"""
-module
-"""
-from . import translator

@@ -1,3 +1,6 @@
+"""
+module
+"""
 import os
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
@@ -17,13 +20,16 @@ language_translator = LanguageTranslatorV3(
 language_translator.set_service_url(URL)
 
 def EnglishToFrench(englishText):
+    """A dummy docstring."""
     if englishText == '':
         return ''
-    translation = language_translator.translate(englishText, model_id='en-fr').get_result()
+    translation = language_translator.translate(englishText,
+     model_id='en-fr').get_result()
     frenchText=translation['translations'][0]['translation']
     return frenchText
-    
+
 def FrenchToEnglish(frenchText):
+    """A dummy docstring."""
     if frenchText == '':
         return ''
     translation = language_translator.translate(frenchText, model_id='fr-en').get_result()
